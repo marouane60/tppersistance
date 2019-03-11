@@ -31,7 +31,11 @@ class ViewController: UIViewController {
                 print("probleme de sauvegarde")
             }
         
+        let texte = "ans"
         let requete : NSFetchRequest<Ville> = Ville.fetchRequest()
+        requete.predicate = NSPredicate( format: "nom CONTAINS %@", texte)
+        
+        requete.sortDescriptors = [NSSortDescriptor(key: "nom", ascending: true)]
         
         do {
             let resultat = try leContext.fetch(requete)
