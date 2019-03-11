@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pays" representedClassName="Pays" syncable="YES" codeGenerationType="class">
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="villes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ville" syncable="YES"/>
+    </entity>
+    <entity name="Ville" representedClassName="Ville" syncable="YES" codeGenerationType="class">
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="duPays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pays" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Ville" positionX="-53.01953125" positionY="-183.01171875" width="128" height="88"/>
+        <element name="Pays" positionX="-51.0078125" positionY="6.98046875" width="128" height="73"/>
+    </elements>
 </model>
